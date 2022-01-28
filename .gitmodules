@@ -1,6 +1,3 @@
-[submodule "basicstation"]
-	path = basicstation
-	url = https://github.com/balenalabs/basicstation
 [submodule "wifi-connect"]
 	path = wifi-connect
 	url = https://github.com/balena-os/wifi-connect
