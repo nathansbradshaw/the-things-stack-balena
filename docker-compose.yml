@@ -162,12 +162,12 @@ services:
   # ------------------------------------------------------------------------------------
   # git submodule add https://github.com/balena-os/wifi-connect
   # ------------------------------------------------------------------------------------
-#   wifi-connect:
-#    build: ./wifi-connect
-#    network_mode: "host"
-#    labels:
-#        io.balena.features.dbus: '1'
-#    cap_add:
-#        - NET_ADMIN
-#    environment:
-#        DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
+  wifi-connect:
+   build: ./wifi-connect
+   network_mode: "host"
+   labels:
+       io.balena.features.dbus: '1'
+   cap_add:
+       - NET_ADMIN
+   environment:
+       DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
