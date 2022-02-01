@@ -1,6 +1,6 @@
-[submodule "wifi-connect"]
-	path = wifi-connect
-	url = https://github.com/balena-os/wifi-connect
+# [submodule "wifi-connect"]
+# 	path = wifi-connect
+# 	url = https://github.com/balena-os/wifi-connect
 [submodule "balena-legacy-packet-forwarder"]
 	path = balena-legacy-packet-forwarder
 	url = https://github.com/AllWize/balena-legacy-packet-forwarder/
