@@ -95,6 +95,32 @@ services:
       io.balena.features.dbus: "1"
       io.balena.features.supervisor-api: "1"
       io.balena.features.balena-api: "1"
+      
+  # ------------------------------------------------------------------------------------
+  # mqtt + nodered
+  # ------------------------------------------------------------------------------------
+  nodered:
+    build: 
+      context: nodered
+      dockerfile: Dockerfile.template
+    network_mode: "host"
+    labels:
+      - "io.balena.features.sysfs=1"
+      - "io.balena.features.dbus=1"
+    environment:
+      UDEV: '1'
+      DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
+      INITSYSTEM: "on"
+    privileged: true
+    volumes:
+      - "nodered-data:/data"
+    
+  mqtt:
+    build:
+      context: mqtt
+      dockerfile: Dockerfile.template
+    ports:
+      - "2883:1883"
 
   # mosquitto:
   #   restart: always
