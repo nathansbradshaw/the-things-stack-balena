@@ -5,7 +5,8 @@ volumes:
   postgres:
   stack-blob:
   stack-data:
-
+  nodered-data:
+  
 services:
   postgres:
     image: postgres:11.12
