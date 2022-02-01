@@ -100,14 +100,14 @@ services:
   # ------------------------------------------------------------------------------------
   # mqtt + nodered
   # ------------------------------------------------------------------------------------
-#   mqtt:
-#     image: panuwitp/mosquitto-arm
-#     ports:
-#       - "1883:1883"
-#   mqtt-test:
-#     image: panuwitp/mosquitto-arm
-#     ports:
-#       - "1884:1883"
+  mqtt:
+    image: panuwitp/mosquitto-arm
+    ports:
+      - "1883:1883"
+  mqtt-test:
+    image: panuwitp/mosquitto-arm
+    ports:
+      - "1884:1883"
 #   nodered:
 #     build: 
 #       context: nodered
@@ -131,18 +131,18 @@ services:
 #     ports:
 #       - "2883:1883"
 
-  mosquitto:
-    restart: always
-    build: ./mqtt/mosquitto
-    ports:
-      - "1883:1883"
-      - "1884:1884"
-  mdns-publisher:
-    build: ./mqtt/mdns-publisher
-    environment:
-      DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
-    labels:
-      io.balena.features.dbus: "1"
+#   mosquitto:
+#     restart: always
+#     build: ./mqtt/mosquitto
+#     ports:
+#       - "1883:1883"
+#       - "1884:1884"
+#   mdns-publisher:
+#     build: ./mqtt/mdns-publisher
+#     environment:
+#       DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
+#     labels:
+#       io.balena.features.dbus: "1"
 
   # ------------------------------------------------------------------------------------
   # git submodule add https://github.com/AllWize/balena-legacy-packet-forwarder/
