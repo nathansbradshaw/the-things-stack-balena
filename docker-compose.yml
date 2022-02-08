@@ -100,14 +100,14 @@ services:
   # ------------------------------------------------------------------------------------
   # mqtt + nodered
   # ------------------------------------------------------------------------------------
-  mqtt:
-    image: panuwitp/mosquitto-arm
-    ports:
-      - "1883:1883"
-  mqtt-test:
-    image: panuwitp/mosquitto-arm
-    ports:
-      - "1884:1883"
+#   mqtt:
+#     image: panuwitp/mosquitto-arm
+#     ports:
+#       - "1883:1883"
+#   mqtt-test:
+#     image: panuwitp/mosquitto-arm
+#     ports:
+#       - "1884:1883"
 #   nodered:
 #     build: 
 #       context: nodered
