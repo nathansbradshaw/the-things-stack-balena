@@ -5,7 +5,7 @@ volumes:
   postgres:
   stack-blob:
   stack-data:
-  nodered-data:
+#   nodered-data:
   
 services:
   postgres:
