@@ -1,8 +1,8 @@
 FROM nodered/node-red-docker:rpi-v8
 
 # installing an editor
-USER root
-RUN apt-get update
+# USER root
+# RUN apt-get update
 USER node-red
 
 RUN npm install node-red-contrib-resinio
