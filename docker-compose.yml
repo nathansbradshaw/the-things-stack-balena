@@ -6,7 +6,9 @@ volumes:
   stack-blob:
   stack-data:
   node-red-data:
-  
+  mosquitto-config:
+  mosquitto-data:
+  mosquitto-log:
 services:
   postgres:
     image: postgres:11.12
@@ -108,19 +110,28 @@ services:
     image: panuwitp/mosquitto-arm
     ports:
       - "2883:1883"
+  eclipse-mosquitto:
+    image: eclipse-mosquitto:1.6.10
+    ports:
+      - "1883:1883"
+    network_mode: "host"
+    volumes:
+      - "mosquitto-config:/mosquitto/config"
+      - "mosquitto-data:/mosquitto/data"
+      - "mosquitto-log:/mosquitto/log" 
 #   mqtt-test:
 #     image: panuwitp/mosquitto-arm
 #     ports:
 #       - "1884:1883"
-  node-red:
-    build: node-red
-    volumes:
-       - 'node-red-data:/data'
-    ports:
-       - "1880:1880"
-    depends_on:
-        - mqtt
-    restart: always
+#   node-red:
+#     build: node-red
+#     volumes:
+#        - 'node-red-data:/data'
+#     ports:
+#        - "1880:1880"
+#     depends_on:
+#         - mqtt
+#     restart: always
     
 #   mqtt:
 #     build:
